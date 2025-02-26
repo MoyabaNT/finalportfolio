@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
+import Stack from "./Components/Stack";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +17,7 @@ const router = createBrowserRouter(
     <Route path='/About' element={<About />} />
     <Route path='/Projects' element={<Projects />} />
     <Route path='/Contact' element={<Contact />} />
+    <Route path='/Stack' element={<Stack />} />
 
     </>
   )

@@ -6,6 +6,8 @@ import { MdPerson2 } from "react-icons/md";
 import { FaRegFilePowerpoint } from "react-icons/fa6";
 import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
 import Logo from '../assets/gora.png';
+import { GiStoneStack } from "react-icons/gi";
+
 
 const NavBar = () => {
   const [open, setOpen] = useState(false) //useState is used to track UI changes in the DOM
@@ -17,6 +19,7 @@ const NavBar = () => {
     { title: 'Home', Icon: BiHomeSmile, href: 'Home' },
     { title: 'About', Icon: MdPerson2, href: 'About' },
     { title: 'Projects', Icon: FaRegFilePowerpoint, href: 'Projects' },
+    { title: 'Stack', Icon: GiStoneStack, href: 'Stack' }, 
     { title: 'Contact', Icon: HiOutlineChatBubbleOvalLeftEllipsis, href: 'Contact' },
   ]
 
