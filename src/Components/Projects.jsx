@@ -16,6 +16,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import NavBar from './NavBar';
 
+import logodesign from '../assets/portfolio/MyLogo.png';
+import PLogo from '../assets/portfolio/PLogo.png';
+
+
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -34,7 +38,20 @@ const Projects = () => {
       title: 'ThinkFriday',
       message: 'ThinkFriday is a collaborative project showcasing innovative ideas and teamwork.',
     },
+    { id: 3,
+      images: [logodesign],
+      title: 'logo',
+      message: 'SazzyStitches: A vibrant crochet business where creativity and craftsmanship come together. I designed the logo using Canva to perfectly embody the essence of my unique crochet creations. Each stitch tells a story, reflecting the passion and dedication behind every piece. At SazzyStitches, we celebrate the art of crochet, bringing coziness and color to your life through beautifully crafted items.' 
+    },
+    { id: 4, 
+      images: [PLogo],
+      title: 'logo',
+      message: 'The Pack It Buddy logo was carefully crafted using Canva, where creativity and functionality came together to symbolize the essence of the platform. The design captures the process of clients packing their belongings into boxes, representing the seamless moving experience Pack It Buddy offers. Through Canva`s versatile design tools, I was able to incorporate elements that reflect the app’s role as a bridge between clients and drivers. The clean lines and thoughtful composition of the logo mirrors the efficiency and care they bring to each move, making it visually resonate with the brand’s mission.' },
+
+
   ];
+
+  
 
   const handleViewClick = (id) => {
     setSelectedProject(id);
@@ -82,9 +99,9 @@ const Projects = () => {
         <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 p-2 inline">
           Projects
         </p>
-        <p className="py-6 text-lg text-pink-400">These are the projects I have worked on</p>
+        <p className="py-6 text-lg text-black">These are the projects I have worked on</p>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-4 sm:px-12 text-pink-400 font-bold">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-4 sm:px-12 text-black font-bold">
           {myprojects.map(({ id, title, images }) => (
             <div
               key={id}
@@ -101,7 +118,7 @@ const Projects = () => {
               {!selectedProject && (
                 <button
                   onClick={() => handleViewClick(id)}
-                  className="px-2 py-1 bg-pink-300 rounded"
+                  className="px-2 py-1 bg-pink-200 rounded"
                 >
                   View
                 </button>
@@ -114,6 +131,13 @@ const Projects = () => {
           <div className="mt-16 fixed inset-0 z-40 bg-[rgba(114,111,113,0.2)] backdrop-blur-sm bg-opacity-80 flex items-center justify-center">
             <div className="relative text-center">
               {!showSlideshow ? (
+                <div> 
+                  <button
+                    onClick={handleCloseClick}
+                    className="absolute top-4 right-4 text-white text-xl bg-red-500 px-4 py-2 rounded-full"
+                  >
+                    X
+                  </button>
                 <div className='px-20'>
                   <p className=" z-40 bg-[rgba(202,86,163,0.86)] backdrop-blur-sm text-white p-4 rounded-lg px-16 ">
                     {selectedProjectData.message}
@@ -124,6 +148,7 @@ const Projects = () => {
                   >
                     View project
                   </button>
+                </div>
                 </div>
               ) : (
                 <div className=''>
@@ -157,6 +182,9 @@ const Projects = () => {
             </div>
           </div>
         )}
+
+                {/**the logos start here */}
+
       </div>
     </div>
     </div>

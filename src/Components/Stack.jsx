@@ -29,8 +29,8 @@ const Stack = () => {
         </div>
     <div name="technologies" className="mt-16 bg-pink-50 w-full h-full py-8">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-        <p className="text-4xl text-pink-400 font-bold border-b-4 border-pink-300 p-2 inline">Technologies</p>
-        <p className="py-6 text-lg text-black">These are my technologies</p>
+        <p className="text-4xl text-pink-400 font-bold border-b-4 border-pink-300 p-2 inline">Tech stack</p>
+        <p className="py-6 text-lg text-black">view my tech stack below</p>
       </div>
       <div className="'/
        w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-4 sm:px-12 text-black">
