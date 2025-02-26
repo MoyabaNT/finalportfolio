@@ -12,11 +12,11 @@ const Home = () => {
       </div>
       <div
         name="home"
-        className="md:mt-16 h-screen w-full bg-pink-50 min-h-screen"
+        className="mt-16 h-screen w-full bg-pink-50"
       >
         <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
           <div className="flex flex-col justify-center h-full">
-            <h2 className="md:text-6xl text-5xl font-bold text-pink-300 text-center md:text-left">
+            <h2 className="md:text-6xl text-5xl font-bold text-pink-400 text-center md:text-left">
               Aspirant Full Stack Developer
             </h2>
             <p className="text-gray-500 py-4 max-w-md text-center md:text-left">
