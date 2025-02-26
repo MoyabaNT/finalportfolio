@@ -18,6 +18,7 @@ import NavBar from './NavBar';
 
 import logodesign from '../assets/portfolio/MyLogo.png';
 import PLogo from '../assets/portfolio/PLogo.png';
+import Socials from './Socials';
 
 
 const Projects = () => {
@@ -89,6 +90,7 @@ const Projects = () => {
     <div className=''>
       <div className='text-pink-400'>
       <NavBar />
+      <Socials />
 
       </div>
     <div

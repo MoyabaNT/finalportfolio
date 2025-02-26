@@ -1,5 +1,6 @@
 import fun from '../assets/nna.jpeg';
 import NavBar from './NavBar';
+import Socials from './Socials';
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
         {/* Side bar */}
         <div className='text-pink-400'>
       <NavBar />
+      <Socials />
 
       </div>
         <div className='p-4 text-center font-bold text-pink-400 text-4xl'>
@@ -19,7 +21,7 @@ const Home = () => {
             <div className="w-80 ">
                 <img src={fun} alt="the people" className="rounded-full hover:shadow-lg shadow-pink-400"/>
             </div>
-            <div className="h-70 hover:mr-4 transform transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 p-4 hover:shadow-md shadow-pink-400 rounded-4xl border-r-1 border-l-1 border-pink-200">
+            <div className="h-90 hover:mr-4 transform transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 p-4 hover:shadow-md shadow-pink-400 rounded-4xl border-r-1 border-l-1 border-pink-200">
                 <h1 className="text-2xl font-bold text-pink-400 p-2">who am I ? </h1>
                 <p className="">
                 A Front-End Developer who thrive on designing, developing, and managing innovative technology solutions that address complex business challenges. I enjoy blending creativity with technical expertise to bring ideas to life, whether it is building dynamic applications with JavaScript, crafting seamless cross-platform mobile experiences using React Native, or designing modern, responsive websites with Tailwind CSS.                </p>
@@ -33,9 +35,9 @@ const Home = () => {
 
                 </div>
         </div>
-            <div className=" md:flex justify-center p-16">
-                <h1 className="text-2xl font-bold text-pink-400 p-6">Summary</h1>
-                <p>
+            <div className=" md:flex justify-center p-16 ">
+                <h1 className="text-2xl font-bold text-pink-400 p-6 ">Summary</h1>
+                <p className='rounded-4xl p-4 border-l-1 border-r-1 border-pink-200'>
                  I find fulfillment in transforming ideas into functional, impactful solutions through clean and efficient code. I’m driven by the challenge of problem-solving and the satisfaction that comes with creating seamless, user-friendly experiences. My love for coding keeps me motivated to learn, adapt, and continuously improve my skills, allowing me to bring both creativity and precision to every project I take on.                </p>
             </div>
 

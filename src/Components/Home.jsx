@@ -2,17 +2,18 @@ import { Link } from "react-router-dom";
 import HeroImage from "../assets/nthabi.jpeg";
 import NavBar from "./NavBar";
 import { FaArrowRight } from "react-icons/fa";
+import Socials from "./Socials";
 
 const Home = () => {
   return (
     <div>
       <div className='text-pink-400'>
       <NavBar />
-
+      <Socials />
       </div>
       <div
         name="home"
-        className="mt-16 h-screen w-full bg-pink-50"
+        className="mt-16 h-screen w-full bg-pink-50 py-4"
       >
         <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
           <div className="flex flex-col justify-center h-full">

@@ -8,6 +8,7 @@ import REactimage from '../assets/react.png';
 import Firebase from '../assets/firebase.png';
 import Canva from '../assets/canva.png';
 import NavBar from './NavBar';
+import Socials from './Socials';
 
 const Stack = () => {
   const techs = [
@@ -24,9 +25,10 @@ const Stack = () => {
 
   return (
     <div>
-        <div>
-            <NavBar />
-        </div>
+      <div className='text-pink-400'>
+      <NavBar />
+      <Socials />
+      </div>
     <div name="technologies" className="mt-16 bg-pink-50 w-full h-full py-8">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <p className="text-4xl text-pink-400 font-bold border-b-4 border-pink-300 p-2 inline">Tech stack</p>
