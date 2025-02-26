@@ -30,7 +30,7 @@ const Home = () => {
             <div className="hidden md:flex">
               <Link
                 to="/Projects"
-                className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-pink-300 to-pink-400 cursor-pointer"
+                className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-b from-pink-500 via-pink-400 to-pink-500 cursor-pointer"
               >
                 Projects
                 <span className="group-hover:rotate-90 duration-300">
@@ -44,7 +44,7 @@ const Home = () => {
           <div className="flex md:hidden mb-4">
             <Link
               to="/Projects"
-              className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-pink-300 to-pink-400 cursor-pointer"
+              className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-b from-pink-500 via-pink-400 to-pink-500 cursor-pointer"
             >
               Projects
               <span className="group-hover:rotate-90 duration-300">
