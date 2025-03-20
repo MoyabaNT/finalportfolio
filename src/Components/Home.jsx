@@ -18,10 +18,10 @@ const Home = () => {
         <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
           <div className="flex flex-col justify-center h-full">
             <h2 className="md:text-6xl text-5xl font-bold text-pink-400 text-center md:text-left">
-              Aspirant Full Stack Developer
+              Full Stack Developer
             </h2>
             <p className="text-gray-500 py-4 max-w-md text-center md:text-left">
-              A current passionate Front-End developer with a love for learning,
+              A FullStack developer with love for learning,
               I bring a touch of charm and excellence to every line of code I
               write in the ever-evolving world of IT. 🌸
             </p>
