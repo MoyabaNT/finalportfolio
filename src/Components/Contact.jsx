@@ -10,7 +10,7 @@ const ContactMeHere = () => {
       </div>
     <div
       name="contact"
-      className="mt-16 w-full h-screen bg-pink-50 p-4 text-white"
+      className="mt-16 w-full h-screen  p-4 text-white"
     >
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">

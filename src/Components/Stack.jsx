@@ -78,7 +78,7 @@ const Stack = () => {
         <NavBar />
         <Socials />
       </div>
-      <div name="technologies" className="mt-16 bg-pink-50 w-full h-full py-8">
+      <div name="technologies" className="mt-16 w-full h-full py-8">
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
           <p className="text-4xl text-pink-400 font-bold border-b-4 border-pink-300 p-2 inline">Tech stack</p>
           <p className="py-6 text-lg text-black">View my tech stack below</p>

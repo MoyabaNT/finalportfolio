@@ -95,7 +95,7 @@ const Projects = () => {
       </div>
     <div
       name="projects"
-      className="mt-16 w-full bg-pink-50 min-h-screen"
+      className="mt-16 w-full  min-h-screen"
       >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 p-2 inline">

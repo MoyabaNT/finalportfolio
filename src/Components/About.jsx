@@ -7,7 +7,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className="min-h-screen mt-16 bg-pink-50">
+      <div className="min-h-screen mt-16">
         {/* Side bar */}
         <div className='text-pink-400'>
       <NavBar />
