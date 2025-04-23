@@ -24,7 +24,7 @@ const NavBar = () => {
   ]
 
   return (
-    <div className='h-16 fixed top-0 left-0 right-0 z-50 shadow-sm'>
+    <div className='h-16 fixed top-0 left-0 right-0 z-50 shadow-sm bg-white'>
   
       {/**Nav bar */}
       <div className='hidden sm:block  '>

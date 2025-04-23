@@ -137,14 +137,16 @@ const Projects = () => {
   const selectedProjectData = myprojects.find((project) => project.id === selectedProject);
 
   return (
-    <div className="text-pink-400 fixed ml-10 sm:ml-30">
+    <div className="text-pink-400 ">
       <NavBar />
       <Socials />
       <div name="projects" className="mt-16 w-full min-h-screen">
+        
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
           <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 inline">
             Projects
           </p>
+          +
           <p className="py-6 text-lg text-black">These are the projects I have worked on</p>
 
           <div className="container group relative flex flex-wrap justify-center items-center py-8 px-4 sm:px-12">
