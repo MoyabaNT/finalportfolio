@@ -8,6 +8,7 @@ import {
 import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import Stack from "./Components/Stack";
+import TheCards from "./Components/theCards";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
     <Route path='/Projects' element={<Projects />} />
     <Route path='/Contact' element={<Contact />} />
     <Route path='/Stack' element={<Stack />} />
+    <Route path='/TheCards' element={<TheCards />} />
 
     </>
   )

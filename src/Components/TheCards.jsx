@@ -17,11 +17,6 @@ import PLogo from '../assets/portfolio/PLogo.png';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import NavBar from './NavBar';
 import Socials from './Socials';
-import taxCal from '../assets/BasicnTax/taxCal.png';
-import nomoro from '../assets/BasicnTax/nomoro.png';
-import results from '../assets/BasicnTax/results.png';
-
-
 
 const GlassCard = ({ dataText = '', rotate = 0, image = '', isSelected = false, onClick }) => {
   return (
@@ -39,7 +34,7 @@ const GlassCard = ({ dataText = '', rotate = 0, image = '', isSelected = false, 
         />
       )}
       {dataText && (
-        <div className="absolute bottom-0 w-full h-10 rounded-lg bg-white flex justify-center items-center text-pink-400 font-bold">
+        <div className="absolute bottom-0 w-full h-10 bg-white flex justify-center items-center text-black font-arial">
           {dataText}
         </div>
       )}
@@ -72,14 +67,14 @@ const Projects = () => {
       images: [forth, second, third, first, fifth, six],
       title: 'Pack It Buddy',
       message:
-      'Pack It Buddy: Transform the way you move with Pack It Buddy, our innovative final-year project designed to revolutionize the moving industry. Addressing a critical gap in the market, Pack It Buddy connects customers—especially those in underserved rural areas—with reliable, trustworthy moving services. By offering a seamless, transparent platform, we empower everyone, from urban renters to temporary residents, to access efficient packing and moving solutions. Our user-centric design ensures forwarders and clients are effortlessly linked, delivering a streamlined experience that redefines reliability and convenience in the moving process.'
-   },
-   {
+        'Final year project ~ Find the project here 👌 : https://github.com/MoyabaNT/Systematic-Six-Final-Sprint/tree/main ...Pack It Buddy addresses a significant gap in the moving industry by providing a platform that connects customers with trustworthy moving services, particularly for those in rural areas who are often overlooked. The industry has yet to tap into the potential of offering reliable packing assistance, leaving many customers uncertain about which companies to trust. Our solution bridges this gap by offering a seamless, transparent platform that caters to all customers, including those in temporary housing such as renters in business hubs. Pack It Buddy delivers a user-centric, efficient service that ensures forwarders and customers are easily connected.',
+    },
+    {
       id: 2,
       images: [num1, num2, num3, num4, num5, num6],
       title: 'ThinkFriday',
       message:
-        'ThinkFriday: A collaborative project showcasing innovative ideas and teamwork.',
+        'ThinkFriday is a collaborative project showcasing innovative ideas and teamwork.',
     },
     {
       id: 3,
@@ -94,13 +89,6 @@ const Projects = () => {
       title: 'Pack It Buddy Logo',
       message:
         'The Pack It Buddy logo was carefully crafted using Canva, where creativity and functionality came together to symbolize the essence of the platform. The design captures the process of clients packing their belongings into boxes, representing the seamless moving experience Pack It Buddy offers. Through Canva`s versatile design tools, I was able to incorporate elements that reflect the app’s role as a bridge between clients and drivers. The clean lines and thoughtful composition of the logo mirrors the efficiency and care they bring to each move, making it visually resonate with the brand’s mission.',
-    },
-    {
-      id: 5,
-      images: [taxCal, nomoro, results ],
-      title: 'Tax Calculator',
-      message:
-        'Dive into the world of financial empowerment with this sleek and intuitive South African Income Tax Calculator! Built with HTML and CSS, it brings the South African Revenue Service (SARS) tax calculations to life. Whether you’re a young professional, a seasoned entrepreneur, or just curious about your take-home pay, this tool makes tax calculations engaging, transparent, and visually stunning.'
     },
   ];
 
@@ -137,12 +125,12 @@ const Projects = () => {
   const selectedProjectData = myprojects.find((project) => project.id === selectedProject);
 
   return (
-    <div className="text-pink-400 fixed ml-10 sm:ml-30">
+    <div className="text-pink-400">
       <NavBar />
       <Socials />
       <div name="projects" className="mt-16 w-full min-h-screen">
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
-          <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 inline">
+          <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 p-2 inline">
             Projects
           </p>
           <p className="py-6 text-lg text-black">These are the projects I have worked on</p>
@@ -152,7 +140,7 @@ const Projects = () => {
               <GlassCard
                 key={id}
                 dataText={title}
-                rotate={[25, 25, 25, 25, 25][index % 5]} // Cycle through rotations for visual effect
+                rotate={[-25, -20, 15, 15][index % 4]} // Cycle through rotations for visual effect
                 image={images[0]} // Use first image as thumbnail
                 isSelected={selectedProject === id}
                 onClick={() => handleViewClick(id)}
