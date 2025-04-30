@@ -77,10 +77,10 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Sidebar Toggle */}
-      <div className="sm:hidden flex items-center p-3">
+      <div className="sm:hidden flex items-center p-3 text-white">
         <button
           onClick={toggleSidebar}
-          className="text-[var(--accent-color)]"
+          className="text-white"
           aria-label="toggle sidebar"
         >
           <CiCircleList size={30} />
@@ -100,7 +100,7 @@ const NavBar = () => {
             className="fixed inset-0 z-40 bg-[rgba(114,111,113,0.2)] backdrop-blur-sm"
           ></div>
           <div
-            className="fixed top-0 bottom-0 left-0 z-50 w-full max-w-xs border-r-2 border-[var(--secondary-color)] bg-[var(--accent-color)]/5"
+            className="fixed top-0 bottom-0 left-0 z-50 w-full max-w-xs border-r-2 border-[var(--primary-color)] bg-[var(--accent-color)]/60 "
             ref={ref}
             aria-label="Sidebar"
           >
@@ -108,7 +108,7 @@ const NavBar = () => {
               <button
                 onClick={toggleSidebar}
                 aria-label="close sidebar"
-                className="ml-auto text-[var(--primary-color)]"
+                className="ml-auto text-white"
               >
                 <IoArrowBackCircleOutline size={40} />
               </button>
@@ -116,7 +116,7 @@ const NavBar = () => {
                 <img
                   src={Logo}
                   alt="Logo"
-                  className="rounded-full object-cover w-20 mt-2 bg-[var(--accent-color)]/10"
+                  className="rounded-full object-cover w-20 mt-2 bg-[var(--accent-color)]/50"
                 />
               </div>
             </div>
@@ -126,7 +126,7 @@ const NavBar = () => {
                   <Link
                     to={item.href}
                     onClick={toggleSidebar}
-                    className="flex items-center justify-between gap-5 p-5 border-b-2 border-[var(--secondary-color)] hover:bg-gray-200 text-[var(--primary-color)]"
+                    className="flex items-center justify-between gap-5 p-5 border-b-2 border-[var(--secondary-color)] hover:bg-gray-200 text-white"
                   >
                     <span>{item.title}</span>
                     <item.Icon className="text-2xl" />
