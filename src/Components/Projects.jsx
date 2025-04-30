@@ -21,8 +21,6 @@ import taxCal from '../assets/BasicnTax/taxCal.png';
 import nomoro from '../assets/BasicnTax/nomoro.png';
 import results from '../assets/BasicnTax/results.png';
 
-
-
 const GlassCard = ({ dataText = '', rotate = 0, image = '', isSelected = false, onClick }) => {
   return (
     <div
@@ -72,9 +70,9 @@ const Projects = () => {
       images: [forth, second, third, first, fifth, six],
       title: 'Pack It Buddy',
       message:
-      'Pack It Buddy: Transform the way you move with Pack It Buddy, our innovative final-year project designed to revolutionize the moving industry. Addressing a critical gap in the market, Pack It Buddy connects customers—especially those in underserved rural areas—with reliable, trustworthy moving services. By offering a seamless, transparent platform, we empower everyone, from urban renters to temporary residents, to access efficient packing and moving solutions. Our user-centric design ensures forwarders and clients are effortlessly linked, delivering a streamlined experience that redefines reliability and convenience in the moving process.'
-   },
-   {
+        'Pack It Buddy: Transform the way you move with Pack It Buddy, our innovative final-year project designed to revolutionize the moving industry. Addressing a critical gap in the market, Pack It Buddy connects customers—especially those in underserved rural areas—with reliable, trustworthy moving services. By offering a seamless, transparent platform, we empower everyone, from urban renters to temporary residents, to access efficient packing and moving solutions. Our user-centric design ensures forwarders and clients are effortlessly linked, delivering a streamlined experience that redefines reliability and convenience in the moving process.',
+    },
+    {
       id: 2,
       images: [num1, num2, num3, num4, num5, num6],
       title: 'ThinkFriday',
@@ -97,10 +95,10 @@ const Projects = () => {
     },
     {
       id: 5,
-      images: [taxCal, nomoro, results ],
+      images: [taxCal, nomoro, results],
       title: 'Tax Calculator',
       message:
-        'Dive into the world of financial empowerment with this sleek and intuitive South African Income Tax Calculator! Built with HTML and CSS, it brings the South African Revenue Service (SARS) tax calculations to life. Whether you’re a young professional, a seasoned entrepreneur, or just curious about your take-home pay, this tool makes tax calculations engaging, transparent, and visually stunning.'
+        'Dive into the world of financial empowerment with this sleek and intuitive South African Income Tax Calculator! Built with HTML and CSS, it brings the South African Revenue Service (SARS) tax calculations to life. Whether you’re a young professional, a seasoned entrepreneur, or just curious about your take-home pay, this tool makes tax calculations engaging, transparent, and visually stunning.',
     },
   ];
 
@@ -137,31 +135,62 @@ const Projects = () => {
   const selectedProjectData = myprojects.find((project) => project.id === selectedProject);
 
   return (
-    <div className="text-pink-400 ">
+    <div className="text-pink-400">
       <NavBar />
       <Socials />
       <div name="projects" className="mt-16 w-full min-h-screen">
-        
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
           <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 inline">
             Projects
           </p>
-          +
           <p className="py-6 text-lg text-black">These are the projects I have worked on</p>
 
-          <div className="container group relative flex flex-wrap justify-center items-center py-8 px-4 sm:px-12">
-            {myprojects.map(({ id, title, images }, index) => (
-              <GlassCard
-                key={id}
-                dataText={title}
-                rotate={[25, 25, 25, 25, 25][index % 5]} // Cycle through rotations for visual effect
-                image={images[0]} // Use first image as thumbnail
-                isSelected={selectedProject === id}
-                onClick={() => handleViewClick(id)}
-              />
-            ))}
+          {/* Flip Cards: Hidden on small screens, visible on md and above */}
+          <div className="hidden md:block">
+            <div className="container group relative flex flex-wrap justify-center items-center py-8 px-4 sm:px-12">
+              {myprojects.map(({ id, title, images }, index) => (
+                <GlassCard
+                  key={id}
+                  dataText={title}
+                  rotate={[25, 25, 25, 25, 25][index % 5]}
+                  image={images[0]}
+                  isSelected={selectedProject === id}
+                  onClick={() => handleViewClick(id)}
+                />
+              ))}
+            </div>
           </div>
 
+          {/* Grid Cards: Visible on small screens, hidden on md and above */}
+          <div className="block md:hidden">
+            <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-4 sm:px-12 text-white">
+              {myprojects.map(({ id, title, images }) => (
+                <div
+                  key={id}
+                  className={`shadow-md hover:scale-105 duration-500 py-4 rounded-lg ${
+                    selectedProject === id ? 'scale-110' : ''
+                  }`}
+                >
+                  <img
+                    src={images[0]}
+                    alt={title}
+                    className="w-44 mx-auto"
+                  />
+                  <p className="mt-4 text-base text-pink-600 font-bold">{title}</p>
+                  {!selectedProject && (
+                    <button
+                      onClick={() => handleViewClick(id)}
+                      className="px-2 py-1 bg-pink-500 font-bold rounded"
+                    >
+                      View
+                    </button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Modal for Project Details */}
           {selectedProjectData && (
             <div className="fixed inset-0 z-40 bg-[rgba(114,111,113,0.2)] backdrop-blur-sm bg-opacity-80 flex items-center justify-center">
               <div className="relative text-center">
@@ -173,7 +202,7 @@ const Projects = () => {
                     >
                       X
                     </button>
-                    <div className="px-4 sm:px-20">
+                    <div className="px-4 sm:px- Kub20">
                       <p className="z-40 bg-[rgba(202,86,163,0.86)] backdrop-blur-sm text-white p-4 rounded-lg">
                         {selectedProjectData.message}
                       </p>
