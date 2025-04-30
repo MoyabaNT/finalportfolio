@@ -30,20 +30,16 @@ const GlassCard = ({ dataText = '', rotate = 0, image = '', isSelected = false, 
       style={{ transform: !isSelected ? `rotate(${rotate}deg)` : 'none' }}
     >
       {image && (
-        <img
-          src={image}
-          alt={dataText}
-          className="w-full h-full object-cover rounded-lg"
-        />
+        <img src={image} alt={dataText} className="w-full h-full object-cover rounded-lg" />
       )}
       {dataText && (
-        <div className="absolute bottom-0 w-full h-10 rounded-lg bg-white flex justify-center items-center text-pink-400 font-bold">
+        <div className="absolute bottom-0 w-full h-10 rounded-lg bg-white flex justify-center items-center text-[var(--primary-color)] font-bold">
           {dataText}
         </div>
       )}
       <button
         onClick={onClick}
-        className="absolute top-2 left-2 px-2 py-1 mr-2 bg-pink-700/5 text-pink-500 font-bold rounded-md hover:bg-pink-900/20 transition-colors duration-300 text-sm"
+        className="absolute top-2 left-2 px-2 py-1 mr-2 bg-[var(--accent-color)]/10 text-[var(--accent-color)] font-bold rounded-md hover:bg-[var(--button-hover)]/20 transition-colors duration-300 text-sm"
       >
         Select
       </button>
@@ -76,8 +72,7 @@ const Projects = () => {
       id: 2,
       images: [num1, num2, num3, num4, num5, num6],
       title: 'ThinkFriday',
-      message:
-        'ThinkFriday: A collaborative project showcasing innovative ideas and teamwork.',
+      message: 'ThinkFriday: A collaborative project showcasing innovative ideas and teamwork.',
     },
     {
       id: 3,
@@ -135,12 +130,12 @@ const Projects = () => {
   const selectedProjectData = myprojects.find((project) => project.id === selectedProject);
 
   return (
-    <div className="text-pink-400">
+    <div className="text-[var(--primary-color)]">
       <NavBar />
       <Socials />
-      <div name="projects" className="mt-16 w-full min-h-screen">
+      <div name="projects" className="mt-16 w-full min-h-screen z-50">
         <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
-          <p className="text-4xl font-bold border-b-4 text-pink-400 border-pink-200 inline">
+          <p className="text-4xl font-bold border-b-4 text-[var(--primary-color)] border-[var(--secondary-color)] inline">
             Projects
           </p>
           <p className="py-6 text-lg text-black">These are the projects I have worked on</p>
@@ -171,16 +166,12 @@ const Projects = () => {
                     selectedProject === id ? 'scale-110' : ''
                   }`}
                 >
-                  <img
-                    src={images[0]}
-                    alt={title}
-                    className="w-44 mx-auto"
-                  />
-                  <p className="mt-4 text-base text-pink-600 font-bold">{title}</p>
+                  <img src={images[0]} alt={title} className="w-44 mx-auto" />
+                  <p className="mt-4 text-base text-[var(--primary-color)] font-bold">{title}</p>
                   {!selectedProject && (
                     <button
                       onClick={() => handleViewClick(id)}
-                      className="px-2 py-1 bg-pink-500 font-bold rounded"
+                      className="px-2 py-1 bg-[var(--accent-color)] font-bold rounded hover:bg-[var(--button-hover)]"
                     >
                       View
                     </button>
@@ -202,13 +193,13 @@ const Projects = () => {
                     >
                       X
                     </button>
-                    <div className="px-4 sm:px- Kub20">
-                      <p className="z-40 bg-[rgba(202,86,163,0.86)] backdrop-blur-sm text-white p-4 rounded-lg">
+                    <div className="px-4 sm:px-20">
+                      <p className="z-40 bg-[var(--modal-bg)] backdrop-blur-sm text-white p-4 rounded-lg">
                         {selectedProjectData.message}
                       </p>
                       <button
                         onClick={handleStartSlideshow}
-                        className="mt-4 px-4 py-2 bg-[rgba(202,86,163,0.86)] hover:bg-pink-500 hover:font-bold text-white rounded"
+                        className="mt-4 px-4 py-2 bg-[var(--accent-color)] hover:bg-[var(--button-hover)] text-white font-bold rounded"
                       >
                         View project
                       </button>

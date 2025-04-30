@@ -9,10 +9,23 @@ import Projects from "./Components/Projects";
 import Contact from "./Components/Contact";
 import Stack from "./Components/Stack";
 import TheCards from "./Components/theCards";
+import { ThemeProvider } from './Context/ThemeContext';
+import NavBar from "./Components/NavBar";
+import Socials from "./Components/Socials";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
+    <Route
+      element={
+        <div>
+          <NavBar />
+          <Socials />
+        </div>
+      }
+    >
+
+    </Route>
     <Route index='/Home' element={<Home />} />
     <Route path='/Home' element={<Home />} />
     <Route path='/About' element={<About />} />
@@ -27,10 +40,9 @@ const router = createBrowserRouter(
 
 const App = () => {
   return (
-    <div>
+    <ThemeProvider>
       <RouterProvider router={router} />
-    </div>
-  )
+    </ThemeProvider>  )
 }
 
 export default App

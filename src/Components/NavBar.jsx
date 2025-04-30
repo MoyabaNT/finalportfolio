@@ -1,113 +1,164 @@
-import { useRef, useState } from 'react'
-import { CiCircleList } from "react-icons/ci";
-import { useClickAway } from 'react-use' //had to npm i react-use
-import { IoArrowBackCircleOutline } from "react-icons/io5";import { BiHomeSmile } from 'react-icons/bi'
-import { MdPerson2 } from "react-icons/md";
-import { FaRegFilePowerpoint } from "react-icons/fa6";
-import { HiOutlineChatBubbleOvalLeftEllipsis } from "react-icons/hi2";
+// src/Components/NavBar.jsx
+import { useRef, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CiCircleList } from 'react-icons/ci';
+import { useClickAway } from 'react-use';
+import { IoArrowBackCircleOutline } from 'react-icons/io5';
+import { BiHomeSmile } from 'react-icons/bi';
+import { MdPerson2 } from 'react-icons/md';
+import { FaRegFilePowerpoint } from 'react-icons/fa6';
+import { HiOutlineChatBubbleOvalLeftEllipsis } from 'react-icons/hi2';
+import { GiStoneStack } from 'react-icons/gi';
 import Logo from '../assets/gora.png';
-import { GiStoneStack } from "react-icons/gi";
-
+import { ThemeContext } from '../Context/ThemeContext';
 
 const NavBar = () => {
-  const [open, setOpen] = useState(false) //useState is used to track UI changes in the DOM
-  const ref = useRef(null) //useRef is used simply to store a value that does not affect the DOM if the value changes
-  useClickAway(ref, () => setOpen(false)) //checks if the sidebar is clicked and takes action
-  const toggleSidebar = () => setOpen(prev => !prev)
+  const { theme, changeTheme } = useContext(ThemeContext);
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useClickAway(ref, () => setOpen(false));
+  const toggleSidebar = () => setOpen((prev) => !prev);
 
   const items = [
-    { title: 'Home', Icon: BiHomeSmile, href: 'Home' },
-    { title: 'About', Icon: MdPerson2, href: 'About' },
-    { title: 'Projects', Icon: FaRegFilePowerpoint, href: 'Projects' },
-    { title: 'Stack', Icon: GiStoneStack, href: 'Stack' }, 
-    { title: 'Contact', Icon: HiOutlineChatBubbleOvalLeftEllipsis, href: 'Contact' },
-  ]
+    { title: 'Home', Icon: BiHomeSmile, href: '/Home' },
+    { title: 'About', Icon: MdPerson2, href: '/About' },
+    { title: 'Projects', Icon: FaRegFilePowerpoint, href: '/Projects' },
+    { title: 'Stack', Icon: GiStoneStack, href: '/Stack' },
+    { title: 'Contact', Icon: HiOutlineChatBubbleOvalLeftEllipsis, href: '/Contact' },
+  ];
+
+  const themes = [
+    { name: 'pink', label: 'Pink' },
+    { name: 'blue', label: 'Blue' },
+    { name: 'green', label: 'Green' },
+    { name: 'red', label: 'Red' },
+    { name: 'purple', label: 'Purple' },
+  ];
 
   return (
-    <div className='h-16 fixed top-0 left-0 right-0 z-50 shadow-sm bg-white'>
-  
-      {/**Nav bar */}
-      <div className='hidden sm:block  '>
-      <ul className='flex fixed top-0 left-0 gap-8 p-4 '>
-              {items.map((item) => {
-                const { title, href } = item;
-                return (
-                  <li
-                    key={title}
-                    className="inline-block transform transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-                  >
-                    <a
-                      href={href}
-                      className="hover:text-pink-300 font-bold text-pink-400"
-                      >
-                        <span>{title}</span>
-                      </a>
-                  </li>
-                );
-              })}
-            </ul>
+    <div className="h-16 fixed top-0 left-0 right-0 z-50 shadow-sm bg-[var(--primary-color)]">
+      {/* Desktop Navbar */}
+      <div className="hidden sm:flex items-center p-4">
+        <img
+          src={Logo}
+          alt="Logo"
+          className="rounded-full object-cover w-10 h-10 mr-4 bg-[var(--accent-color)]/60"
+        />
+        <ul className="flex gap-6">
+          {items.map((item) => (
+            <li
+              key={item.title}
+              className="transform transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+            >
+              <Link
+                to={item.href}
+                className="font-bold text-white hover:text-[var(--accent-color)]"
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
+        <div className="ml-auto flex items-center">
+          <select
+            id="theme-select"
+            value={theme}
+            onChange={(e) => changeTheme(e.target.value)}
+            className="bg-white text-gray-700 p-1 rounded-full border border-[var(--secondary-color)]s"
+          >
+            {themes.map((t) => (
+              <option key={t.name} value={t.name}>
+                {t.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
-      <button
-        onClick={toggleSidebar}
-        className='sm:hidden block p-3 text-pink-500'
-        aria-label='toggle sidebar'
-      >
-        <CiCircleList size={30} />
-      </button>
+      {/* Mobile Sidebar Toggle */}
+      <div className="sm:hidden flex items-center p-3">
+        <button
+          onClick={toggleSidebar}
+          className="text-[var(--accent-color)]"
+          aria-label="toggle sidebar"
+        >
+          <CiCircleList size={30} />
+        </button>
+        <img
+          src={Logo}
+          alt="Logo"
+          className="ml-auto rounded-full object-cover w-10 h-10 bg-[var(--accent-color)]/10"
+        />
+      </div>
+
+      {/* Mobile Sidebar */}
       {open && (
         <>
           <div
-            aria-hidden='true'
-            className='fixed bottom-0 left-0 right-0 top-0 z-40 bg-[rgba(114,111,113,0.2)] backdrop-blur-sm'
+            aria-hidden="true"
+            className="fixed inset-0 z-40 bg-[rgba(114,111,113,0.2)] backdrop-blur-sm"
           ></div>
           <div
-            className="fixed top-0 bottom-0 left-0 z-50 w-full h-screen max-w-xs border-r-2 border-pink-900 bg-pink-100"
+            className="fixed top-0 bottom-0 left-0 z-50 w-full max-w-xs border-r-2 border-[var(--secondary-color)] bg-[var(--accent-color)]/5"
             ref={ref}
             aria-label="Sidebar"
           >
-            <div className='items-center justify-between p-5 border-b-2 border-pink-900'>
+            <div className="p-5 border-b-2 border-[var(--secondary-color)]">
               <button
                 onClick={toggleSidebar}
                 aria-label="close sidebar"
-                className='ml-60'
+                className="ml-auto text-[var(--primary-color)]"
               >
                 <IoArrowBackCircleOutline size={40} />
               </button>
-              <div className='flex justify-center items-center'>
-                <img 
-                src={Logo}
-                alt="Logo" 
-                className='rounded-full object-cover w-70 mt-2 bg-pink-50'/>
-            </div>
-              <div>
+              <div className="flex justify-center">
+                <img
+                  src={Logo}
+                  alt="Logo"
+                  className="rounded-full object-cover w-20 mt-2 bg-[var(--accent-color)]/10"
+                />
               </div>
             </div>
             <ul>
-              {items.map((item) => {
-                const { title, href, Icon } = item;
-                return (
-                  <li key={title}>
-                    <a
-                      onClick={toggleSidebar}
-                      href={href}
-                      className="flex items-center justify-between gap-5 p-5 transition-all border-b-2 hover:bg-gray-700 border-pink-900"
-                    >
-                      <span>{title}</span>
-                      <div>
-                        <Icon className='text-2xl' />
-                      </div>
-                    </a>
-                  </li>
-                );
-              })}
+              {items.map((item) => (
+                <li key={item.title}>
+                  <Link
+                    to={item.href}
+                    onClick={toggleSidebar}
+                    className="flex items-center justify-between gap-5 p-5 border-b-2 border-[var(--secondary-color)] hover:bg-gray-200 text-[var(--primary-color)]"
+                  >
+                    <span>{item.title}</span>
+                    <item.Icon className="text-2xl" />
+                  </Link>
+                </li>
+              ))}
             </ul>
+
+            <div className="mt-4 flex justify-center ">
+                <label htmlFor="mobile-theme-select" className="mr-2 text-[var(--primary-color)] bg-[var(--secondary-color)] p-2 rounded-lg">
+                  Theme:
+                </label>
+                <select
+                  id="mobile-theme-select"
+                  value={theme}
+                  onChange={(e) => changeTheme(e.target.value)}
+                  className="bg-gray-100 p-2 rounded-lg border border-[var(--primary-color)]"
+                >
+                  {themes.map((t) => (
+                    <option key={t.name} value={t.name}>
+                      {t.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
           </div>
         </>
       )}
+      
     </div>
   );
-  }
+};
 
-export default NavBar
+export default NavBar;
