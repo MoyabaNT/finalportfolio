@@ -42,7 +42,7 @@ const NavBar = () => {
         <img
           src={Logo}
           alt="Logo"
-          className="rounded-full object-cover w-10 h-10 mr-4 bg-[var(--accent-color)]/60"
+          className="rounded-full object-cover w-10 h-10 mr-4 bg-[var(--accent-color)]/50"
         />
         <ul className="flex gap-6">
           {items.map((item) => (
@@ -85,11 +85,14 @@ const NavBar = () => {
         >
           <CiCircleList size={30} />
         </button>
+        <Link to="/Home"
+          className="ml-auto rounded-full object-cover w-10 h-10 bg-[var(--accent-color)]/10"
+        >
         <img
           src={Logo}
           alt="Logo"
-          className="ml-auto rounded-full object-cover w-10 h-10 bg-[var(--accent-color)]/10"
         />
+        </Link>
       </div>
 
       {/* Mobile Sidebar */}
