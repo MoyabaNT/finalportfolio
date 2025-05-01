@@ -38,3 +38,43 @@
     --button-hover: #7c3aed; /* purple-600 */
     --modal-bg: rgba(139, 92, 246, 0.86);
   }
+
+  [data-theme="purple"] {
+    --primary-color: #a78bfa; /* purple-400 */
+    --secondary-color: #ddd6fe; /* purple-200 */
+    --accent-color: #8b5cf6; /* purple-500 */
+    --button-hover: #7c3aed; /* purple-600 */
+    --modal-bg: rgba(139, 92, 246, 0.86);
+  }
+
+  [data-theme="emerald"] {
+    --primary-color: #34d399; /* emerald-400 */
+    --secondary-color: #a7f3d0; /* emerald-200 */
+    --accent-color: #10b981; /* emerald-500 */
+    --button-hover: #059669; /* emerald-600 */
+    --modal-bg: rgba(16, 185, 129, 0.86);
+  }
+  
+  [data-theme="brown"] {
+    --primary-color: #d97706; /* amber-600 */
+    --secondary-color: #fef3c7; /* amber-100 */
+    --accent-color: #92400e; /* amber-800 */
+    --button-hover: #7c2d12; /* amber-900 */
+    --modal-bg: rgba(146, 64, 14, 0.86); /* RGBA of amber-800 with 0.86 opacity */
+  }
+    
+  [data-theme="navy-blue"] {
+    --primary-color: #1e40af; /* blue-800 (navy tone) */
+    --secondary-color: #bfdbfe; /* blue-200 (light navy complement) */
+    --accent-color: #1e3a8a; /* blue-900 (deep navy) */
+    --button-hover: #1e3a8a; /* blue-950 (darker navy) */
+    --modal-bg: rgba(30, 58, 138, 0.86);
+  }
+  
+  [data-theme="slate"] {
+    --primary-color: #64748b; /* slate-500 */
+    --secondary-color: #e2e8f0; /* slate-200 */
+    --accent-color: #475569; /* slate-600 */
+    --button-hover: #334155; /* slate-700 */
+    --modal-bg: rgba(71, 85, 105, 0.86);
+  }

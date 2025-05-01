@@ -33,6 +33,10 @@ const NavBar = () => {
     { name: 'green', label: 'Green' },
     { name: 'red', label: 'Red' },
     { name: 'purple', label: 'Purple' },
+    { name: 'brown', label: 'brown' },
+    { name: 'navy-blue', label: 'navy-blue' },
+    { name: 'emerald', label: 'emerald' },
+    { name: 'slate', label: 'slate' },
   ];
 
   return (
@@ -77,7 +81,7 @@ const NavBar = () => {
       </div>
 
       {/* Mobile Sidebar Toggle */}
-      <div className="sm:hidden flex items-center p-3 text-white">
+      <div className="sm:hidden flex items-center p-4 text-white">
         <button
           onClick={toggleSidebar}
           className="text-white"
@@ -138,28 +142,29 @@ const NavBar = () => {
               ))}
             </ul>
 
-            <div className="mt-4 flex justify-center ">
-                <label htmlFor="mobile-theme-select" className="mr-2 text-[var(--primary-color)] bg-[var(--secondary-color)] p-2 rounded-lg">
-                  Theme:
-                </label>
-                <select
-                  id="mobile-theme-select"
-                  value={theme}
-                  onChange={(e) => changeTheme(e.target.value)}
-                  className="bg-gray-100 p-2 rounded-lg border border-[var(--primary-color)]"
-                >
-                  {themes.map((t) => (
-                    <option key={t.name} value={t.name}>
-                      {t.label}
-                    </option>
-                  ))}
-                </select>
+            <div className="flex justify-center p-4">
+              <div
+                id="mobile-theme-select"
+                className="grid grid-cols-3 sm:grid-cols-4 gap-2 p-2"
+              >
+                {themes.map((t) => (
+                  <button
+                    key={t.name}
+                    onClick={() => changeTheme(t.name)}
+                    className={`p-1 rounded-lg border ${
+                    theme === t.name
+                    ? 'border-[var(--accent-color)] bg-[var(--secondary-color)] text-[var(--primary-color)]'
+                    : 'border-[var(--primary-color)] bg-gray-100 text-gray-700'
+                    } hover:bg-[var(--button-hover)] hover:text-white transition-colors`}
+                  >
+                    {t.label}
+                  </button>
+                ))}
               </div>
-
+            </div>
           </div>
         </>
       )}
-      
     </div>
   );
 };
