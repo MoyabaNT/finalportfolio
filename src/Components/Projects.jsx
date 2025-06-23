@@ -12,7 +12,6 @@ import num3 from '../assets/ThinkFriday/num3.png';
 import num4 from '../assets/ThinkFriday/num4.png';
 import num5 from '../assets/ThinkFriday/num5.png';
 import num6 from '../assets/ThinkFriday/num6.png';
-import logodesign from '../assets/portfolio/MyLogo.png';
 import PLogo from '../assets/portfolio/PLogo.png';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import NavBar from './NavBar';
@@ -20,6 +19,14 @@ import Socials from './Socials';
 import taxCal from '../assets/BasicnTax/taxCal.png';
 import nomoro from '../assets/BasicnTax/nomoro.png';
 import results from '../assets/BasicnTax/results.png';
+import first1 from '../assets/ForgeTalent/first1.png'
+import first3 from '../assets/ForgeTalent/first3.png'
+import first4 from '../assets/ForgeTalent/first4.png'
+import first6 from '../assets/ForgeTalent/first6.png'
+import first8 from '../assets/ForgeTalent/first8.png'
+import first9 from '../assets/ForgeTalent/first9.png'
+import first10 from '../assets/ForgeTalent/first10.png'
+import first12 from '../assets/ForgeTalent/first12.png'
 
 const GlassCard = ({ dataText = '', rotate = 0, image = '', isSelected = false, onClick }) => {
   return (
@@ -66,20 +73,20 @@ const Projects = () => {
       images: [forth, second, third, first, fifth, six],
       title: 'Pack It Buddy',
       message:
-        'Pack It Buddy: Transform the way you move with Pack It Buddy, our innovative final-year project designed to revolutionize the moving industry. Addressing a critical gap in the market, Pack It Buddy connects customers—especially those in underserved rural areas—with reliable, trustworthy moving services. By offering a seamless, transparent platform, we empower everyone, from urban renters to temporary residents, to access efficient packing and moving solutions. Our user-centric design ensures forwarders and clients are effortlessly linked, delivering a streamlined experience that redefines reliability and convenience in the moving process.',
+        'GitHub Link: https://github.com/MoyabaNT/Systematic-Six-Final-Sprint.   Led a team of five developers, ensuring 100% task completion on time through effective delegation and feedback. Developed a Firebase-powered feature allowing users to submit service requests with instant database updates, enhancing app performance by 30%. Developed a secure, scalable backend using Node.js, express, and Firebase for real-time data management. Built a responsive, user-friendly interface with React Vite and Tailwind CSS for cross-platform compatibility.',
     },
     {
       id: 2,
       images: [num1, num2, num3, num4, num5, num6],
       title: 'ThinkFriday',
-      message: 'ThinkFriday: A collaborative project showcasing innovative ideas and teamwork.',
+      message: 'GitHub Link: https://github.com/MoyabaNT/ForgeFinalWeb.   A collaborative project demonstrating innovative ideas and effective teamwork. Hosted on Netlify, built with React, Vite, and Tailwind CSS, and fully optimized for mobile responsiveness.'
     },
     {
       id: 3,
-      images: [logodesign],
-      title: 'SazzyStitches Logo',
+      images: [first1, first3, first4, first6, first8, first9, first10, first12],
+      title: 'ForgeTalent',
       message:
-        'SazzyStitches: A vibrant crochet business where creativity and craftsmanship come together. I designed the logo using Canva to perfectly embody the essence of my unique crochet creations. Each stitch tells a story, reflecting the passion and dedication behind every piece. At SazzyStitches, we celebrate the art of crochet, bringing coziness and color to your life through beautifully crafted items.',
+        'Led the team using Agile methodologies, creating project timelines, documenting milestones, and tracking tasks for efficient progress and ongoing maintenance. Guided the team to foster skill growth and collaboration, ensuring sustained project success to date. : Built a dynamic application with React Typescript, Tailwind CSS, and a StackAI-powered chatbot for an engaging user experience.',
     },
     {
       id: 4,
@@ -93,7 +100,7 @@ const Projects = () => {
       images: [taxCal, nomoro, results],
       title: 'Tax Calculator',
       message:
-        'Dive into the world of financial empowerment with this sleek and intuitive South African Income Tax Calculator! Built with HTML and CSS, it brings the South African Revenue Service (SARS) tax calculations to life. Whether you’re a young professional, a seasoned entrepreneur, or just curious about your take-home pay, this tool makes tax calculations engaging, transparent, and visually stunning.',
+        'GitHub Link: https://github.com/MoyabaNT/Calculate.   Explore financial empowerment with this intuitive South African Income Tax Calculator. Developed using HTML and CSS, it delivers accurate SARS tax calculations. Ideal for young professionals, entrepreneurs, or anyone curious about their take-home pay, this tool offers engaging, transparent, and visually appealing tax insights. Building this project significantly enhanced my business logic skills, deepening my ability to implement complex financial calculations effectively.',
     },
   ];
 
