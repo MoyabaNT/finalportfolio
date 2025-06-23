@@ -22,18 +22,18 @@ const About = () => {
               className="rounded-full hover:shadow-lg shadow-[var(--secondary-color)]"
             />
           </div>
-          <div className="h-90 hover:mr-4 transform transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 p-4 hover:shadow-md shadow-[var(--secondary-color)] rounded-4xl border-r-1 border-l-1 border-[var(--secondary-color)]">
+          <div className="h-90 p-4 shadow-[var(--secondary-color)] rounded-4xl border-r-1 border-l-1 border-[var(--secondary-color)]">
             <h1 className="text-2xl font-bold text-[var(--primary-color)] p-2">who am I ?</h1>
             <p>
-              A Front-End Developer who thrives on designing, developing, and managing innovative
+              A Full-Stack Developer who thrives on designing, developing, and managing innovative
               technology solutions that address complex business challenges. I enjoy blending
               creativity with technical expertise to bring ideas to life, whether it is building
-              dynamic applications with JavaScript, crafting seamless cross-platform mobile
+              dynamic applications with ReactJS, crafting seamless cross-platform mobile
               experiences using React Native, or designing modern, responsive websites with Tailwind
               CSS.
             </p>
           </div>
-          <div className="mt-20 hover:ml-4 transform transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 p-4 hover:shadow-md shadow-[var(--secondary-color)] rounded-4xl border-l-1 border-r-1 border-[var(--secondary-color)]">
+          <div className="mt-20 p-4 shadow-[var(--secondary-color)] rounded-4xl border-l-1 border-r-1 border-[var(--secondary-color)]">
             <h1 className="text-2xl font-bold text-[var(--primary-color)] p-2">Vision</h1>
             <p>
               My vision is to consistently deliver innovative and impactful solutions that go beyond
