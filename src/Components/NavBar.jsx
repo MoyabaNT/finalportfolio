@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { CiCircleList } from 'react-icons/ci';
 import { useClickAway } from 'react-use';
 import { IoArrowBackCircleOutline } from 'react-icons/io5';
-import { BiHomeSmile } from 'react-icons/bi';
 import { MdPerson2 } from 'react-icons/md';
 import { FaRegFilePowerpoint } from 'react-icons/fa6';
 import { HiOutlineChatBubbleOvalLeftEllipsis } from 'react-icons/hi2';
@@ -20,7 +19,6 @@ const NavBar = () => {
   const toggleSidebar = () => setOpen((prev) => !prev);
 
   const items = [
-    { title: 'Home', Icon: BiHomeSmile, href: '/Home' },
     { title: 'About', Icon: MdPerson2, href: '/About' },
     { title: 'Projects', Icon: FaRegFilePowerpoint, href: '/Projects' },
     { title: 'Stack', Icon: GiStoneStack, href: '/Stack' },
@@ -43,11 +41,14 @@ const NavBar = () => {
     <div className="h-16 fixed top-0 left-0 right-0 z-50 shadow-sm bg-[var(--primary-color)]">
       {/* Desktop Navbar */}
       <div className="hidden sm:flex items-center p-4">
+        <Link to='/Home'>
         <img
           src={Logo}
           alt="Logo"
           className="rounded-full object-cover w-10 h-10 mr-4 bg-[var(--accent-color)]/50"
         />
+        </Link>
+
         <ul className="flex gap-6">
           {items.map((item) => (
             <li
