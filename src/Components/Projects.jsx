@@ -12,7 +12,6 @@ import num3 from '../assets/ThinkFriday/num3.png';
 import num4 from '../assets/ThinkFriday/num4.png';
 import num5 from '../assets/ThinkFriday/num5.png';
 import num6 from '../assets/ThinkFriday/num6.png';
-import PLogo from '../assets/portfolio/PLogo.png';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import NavBar from './NavBar';
 import Socials from './Socials';
@@ -27,6 +26,19 @@ import first8 from '../assets/ForgeTalent/first8.png'
 import first9 from '../assets/ForgeTalent/first9.png'
 import first10 from '../assets/ForgeTalent/first10.png'
 import first12 from '../assets/ForgeTalent/first12.png'
+import thoma from "../assets/Full/thoma.png";
+import thoma1 from "../assets/Full/thoma1.png";
+import thoma2 from "../assets/Full/thoma2.png";
+import thoma3 from "../assets/Full/thoma3.png";
+import thoma4 from "../assets/Full/thoma4.png";
+import thoma5 from "../assets/Full/thoma5.png";
+import thoma6 from "../assets/Full/thoma6.png";
+import thoma7 from "../assets/Full/thoma7.png";
+import thoma8 from "../assets/Full/thoma8.png";
+import thoma9 from "../assets/Full/thoma9.png";
+import thoma10 from "../assets/Full/thoma10.png";
+import thoma11 from "../assets/Full/thoma11.png";
+
 
 const GlassCard = ({ dataText = '', rotate = 0, image = '', isSelected = false, onClick }) => {
   return (
@@ -84,24 +96,25 @@ const Projects = () => {
     {
       id: 3,
       images: [first1, first3, first4, first6, first8, first9, first10, first12],
-      title: 'ForgeTalent',
+      title: 'Forge Talent',
       message:
         'Led the team using Agile methodologies, creating project timelines, documenting milestones, and tracking tasks for efficient progress and ongoing maintenance. Guided the team to foster skill growth and collaboration, ensuring sustained project success to date. : Built a dynamic application with React Typescript, Tailwind CSS, and a StackAI-powered chatbot for an engaging user experience.',
     },
     {
       id: 4,
-      images: [PLogo],
-      title: 'Pack It Buddy Logo',
-      message:
-        'The Pack It Buddy logo was carefully crafted using Canva, where creativity and functionality came together to symbolize the essence of the platform. The design captures the process of clients packing their belongings into boxes, representing the seamless moving experience Pack It Buddy offers. Through Canva`s versatile design tools, I was able to incorporate elements that reflect the app’s role as a bridge between clients and drivers. The clean lines and thoughtful composition of the logo mirrors the efficiency and care they bring to each move, making it visually resonate with the brand’s mission.',
-    },
-    {
-      id: 5,
       images: [taxCal, nomoro, results],
       title: 'Tax Calculator',
       message:
         'GitHub Link: https://github.com/MoyabaNT/Calculate.   Explore financial empowerment with this intuitive South African Income Tax Calculator. Developed using HTML and CSS, it delivers accurate SARS tax calculations. Ideal for young professionals, entrepreneurs, or anyone curious about their take-home pay, this tool offers engaging, transparent, and visually appealing tax insights. Building this project significantly enhanced my business logic skills, deepening my ability to implement complex financial calculations effectively.',
     },
+        {
+      id: 5,
+      images: [thoma, thoma1, thoma2, thoma3, thoma4, thoma5, thoma6, thoma7, thoma8, thoma9, thoma10, thoma11],
+      title: 'SazzyStitches',
+      message:
+        'GitHub Link: https://github.com/MoyabaNT/Full.  Built a mobile-responsive e-commerce app using React JS, Tailwind CSS, Express, Node.js, and Firebase for learning purposes. Implemented REST APIs with Firebase authentication, restricting cart functionality to verified users in the database. Utilized AI-generated content to practice and enhance skills in full-stack development and API security.',
+    }
+
   ];
 
   const handleViewClick = (id) => {
