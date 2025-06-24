@@ -38,10 +38,10 @@ const Home = () => {
           {/* Portfolio Button for small screens */}
           <div className="flex md:hidden mb-4">
             <Link
-              to="/Projects"
+              to="/Stack"
               className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-b from-[var(--accent-color)] via-[var(--primary-color)] to-[var(--accent-color)] hover:bg-[var(--button-hover)] cursor-pointer"
             >
-              Projects
+              Stack
               <span className="group-hover:rotate-270 duration-800">
                 <FaArrowRight size={25} className="ml-1" />
               </span>
