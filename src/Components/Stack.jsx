@@ -85,7 +85,7 @@ const Stack = () => {
           </p>
           <p className="py-6 text-lg text-black">View my tech stack below</p>
         </div>
-        <div className="fixed top-30 left-0 w-full h-screen flex flex-col items-center justify-center z-10">
+        <div className="fixed top-28 left-0 w-full h-screen flex flex-col items-center justify-center z-10">
           <div
             className="relative"
             style={{
